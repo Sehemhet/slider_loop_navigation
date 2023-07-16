@@ -1,0 +1,143 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+/* здечь начинается код, который относиться непосредственно к блоку галереи */
+.gallery {
+    width:100%;
+    position:relative; /* обязательно при добавлении навигации или пагинации */
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    -ms-flex-pack:distribute;
+        justify-content:space-around;
+    -webkit-box-align:center;
+        -ms-flex-align:center;
+            align-items:center;
+    min-height:100vh;
+    overflow:hidden;
+}
+.gallery__box {
+    width:100%;
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    -ms-flex-wrap:wrap;
+        flex-wrap:wrap;
+    -ms-flex-pack:distribute;
+        justify-content:space-around;
+    gap:10px; /*  увеличить отступы */
+    position:relative;
+}
+.gallery__box_item {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 30%;
+            flex: 1 1 30%; /* можно изменить в целях колличества отображения в строке + учитывайте gap */
+    min-width:250px;
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-box-orient:vertical;
+    -webkit-box-direction:normal;
+        -ms-flex-direction:column;
+            flex-direction:column;
+    -webkit-box-pack:justify;
+        -ms-flex-pack:justify;
+            justify-content:space-between;
+    position: relative;
+}
+.gallery__box_item_img {
+    -o-object-fit:cover;
+       object-fit:cover;
+    -webkit-box-flex:1;
+        -ms-flex:1 1 auto;
+            flex:1 1 auto;
+}
+.gallery__box_item_img img {
+    height:100%;
+    width:100%;
+    -o-object-fit:cover;
+       object-fit:cover;
+}
+.gallery__box_item_text {
+    height: 5vh;
+    width: 100%;
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-box-pack:center;
+        -ms-flex-pack:center;
+            justify-content:center;
+    -webkit-box-align:center;
+        -ms-flex-align:center;
+            align-items:center;
+    background:rgba(255,255,255,0.8); /* заливка для окна текста */
+}
+.gallery__box_item_text span {
+    /* здесь добавите стили для текста */
+}
+.btn {
+    display: none;
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+}
+.btn_close {
+    left: 50%;
+    bottom: 15%; /* когда выберите картники плюс минус одного формата, отрегулируйте позицию выключения */
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    -ms-flex-pack:distribute;
+        justify-content:space-around;
+    -webkit-box-align:center;
+        -ms-flex-align:center;
+            align-items:center;
+    height:80px;
+    width:80px;
+}
+.btn_close__img {
+    height:100%;
+    width:100%;
+    opacity:0.5;
+}
+
+.btn_left {
+    left: 0px;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+}
+.btn_left .navigation__arrow {
+    left: 75%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    position:absolute;
+}
+.btn_right {
+    right: 0px;
+    top: 50%;
+    -webkit-transform: translate(50%, -50%);
+        -ms-transform: translate(50%, -50%);
+            transform: translate(50%, -50%);
+}
+.btn_right .navigation__arrow {
+    left: 25%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    position:absolute;
+}
+.navigation__arrow {
+    font-size:30px;
+    color:red;
+}
